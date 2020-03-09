@@ -1,2 +1,2 @@
-# techdegree_project_2
+# Techdegree Project 2
  Pagination Project
