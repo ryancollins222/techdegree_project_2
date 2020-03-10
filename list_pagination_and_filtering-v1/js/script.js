@@ -64,6 +64,22 @@ function appendPageLinks(list) {
     let li = document.createElement('li');
     let a = document.createElement('a');
     a.textContent = `${i}`;
+    a.href  = '#';
+
+    if (i === 1) {
+      a.className = 'active';
+    }
+
+    a.addEventListener('click', (e) => {
+      let as = document.querySelectorAll('a');
+      let page = e.target.textContent;
+      showPage(list, page);
+      for (i = 0; i < as.length; i++) {
+        as[i].className = '';
+      }
+      e.target.className = 'active';
+    })
+    
     li.appendChild(a);
     ul.appendChild(li);
   }
