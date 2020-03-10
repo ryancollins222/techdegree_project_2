@@ -79,7 +79,7 @@ function appendPageLinks(list) {
       }
       e.target.className = 'active';
     })
-    
+
     li.appendChild(a);
     ul.appendChild(li);
   }
@@ -87,7 +87,17 @@ function appendPageLinks(list) {
 }
 appendPageLinks(studentList);
 
-
-
+// create and append search bar
+let pageHeaderDiv = document.querySelector('.page-header');
+let studentSearchDiv = document.createElement('div');
+studentSearchDiv.className = 'student-search';
+let searchInput = document.createElement('input');
+searchInput.type = 'text';
+searchInput.placeholder = 'Search for students...';
+let searchButton = document.createElement('button');
+searchButton.textContent = 'Search';
+studentSearchDiv.appendChild(searchInput);
+studentSearchDiv.appendChild(searchButton);
+pageHeaderDiv.appendChild(studentSearchDiv);
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
