@@ -58,11 +58,11 @@ function appendPageLinks(list) {
       // append link elements to page
       li.appendChild(a);
       ul.appendChild(li);
-      pageDiv.appendChild(div);
     } else {
       showPage(list, 1);
     }
   } 
+  pageDiv.appendChild(div);
 }
 appendPageLinks(studentList);
 
@@ -103,10 +103,12 @@ searchButton.addEventListener('click', () => {
     showPage(searchResults, 1);
     appendPageLinks(searchResults);
   }
+  searchInput.value = '';
+  searchResults = [];
 })
 
 // input event listener
-searchInput.addEventListener('keyup', (e) => {
+searchInput.addEventListener('keyup', () => {
   let searchResults = [];
   let div = document.querySelector('.pagination')
   let pageDiv = div.parentNode;
